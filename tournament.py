@@ -30,7 +30,8 @@ def game_tournament(hero, dragon_list):
             break
         print('Дракон', dragon._color, 'повержен!\n')
         hero._experience += 50
-        print('Вы получаете', hero._experience, 'опыта')
+        print('Вы получаете 50 опыта')
+        hero.level_up()
 
     if hero.is_alive():
         print('Поздравляем! Вы победили!')
@@ -41,6 +42,15 @@ def game_tournament(hero, dragon_list):
 def start_game():
 
     try:
+        print('DDDDDD    RRRRRR      AA        GGGGG        OOO      N      N    SSSSS ')
+        print('D     D   R     R    A  A      G     G     OO   OO    NN     N  S      S')
+        print('D      D  R     R   A    A    G       G   O       O   N N    N  S       ')
+        print('D      D  R     R  A      A  G           O         O  N  N   N   SSS    ')
+        print('D      D  RRRRRR   A      A  G           O         O  N   N  N      SSS ')
+        print('D      D  RR       AAAAAAAA  G     GGGG  O         O  N    N N         S')
+        print('D      D  R RR     A      A  G        G   O       O   N     NN         S')
+        print('D     D   R   RR   A      A   G      G     OO   OO    N      N  S      S')
+        print('DDDDDD    R    RR  A      A    GGGGGG        OOO      N      N   SSSSSS ')
         print('Добро пожаловать в арифметико-ролевую игру с драконами!')
         print('Представьтесь, пожалуйста: ', end = '')
         
