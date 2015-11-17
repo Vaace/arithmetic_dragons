@@ -29,10 +29,12 @@ def game_tournament(hero, dragon_list):
         if dragon.is_alive():
             break
         print('Дракон', dragon._color, 'повержен!\n')
+        hero._experience += 50
+        print('Вы получаете', hero._experience, 'опыта')
 
     if hero.is_alive():
         print('Поздравляем! Вы победили!')
-        print('Ваш накопленный опыт:', hero._experience)
+        print('Ваш уровень:', hero._level, 'Ваш накопленный опыт:', hero._experience + (hero._level - 1) * 150)
     else:
         print('К сожалению, Вы проиграли...')
 
@@ -41,11 +43,12 @@ def start_game():
     try:
         print('Добро пожаловать в арифметико-ролевую игру с драконами!')
         print('Представьтесь, пожалуйста: ', end = '')
+        
         hero = Hero(input())
 
-        dragon_number = 3
+        dragon_number = randint(1,5)
         dragon_list = generate_dragon_list(dragon_number)
-        assert(len(dragon_list) == 3)
+        assert(len(dragon_list) == dragon_number)
         print('У Вас на пути', dragon_number, 'драконов!')
         game_tournament(hero, dragon_list)
 
